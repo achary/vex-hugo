@@ -6,7 +6,7 @@ sans-serif;
 $secondary-font: 'Droid Serif',
 serif;
 //$primary-color: #f9a743;
-$primary-color: #88002c;
+$primary-color: #44662c;
 $icon-font: 'Josefin Sans' !important;
 
 /*--
@@ -33,6 +33,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center
+}
+
+.sticky-top{
+  background-color: #f4f4f4!important;
+  border-bottom: 1px solid #d8d8d8;
 }
 
 h1,
