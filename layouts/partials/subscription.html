@@ -2,7 +2,7 @@
 
 {{- if $data.homepage.subscription.enable }}
 {{- with $data.homepage.subscription }}
-<section class="call-to-action section bg-opacity" style="background-image: url('{{ .bg_image | absURL }}-{{ index (seq 3 | shuffle) 0 }}.jpg');">
+<section id="subscribe" class="call-to-action section bg-opacity" style="background-image: url('{{ .bg_image | absURL }}-{{ index (seq 3 | shuffle) 0 }}.jpg');">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-8 text-center mx-auto">
