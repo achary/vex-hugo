@@ -83,7 +83,7 @@ p {
 ul {
   padding: 0;
   margin: 0;
-  list-style: none;
+  list-style: disc;
 }
 
 a {
@@ -560,8 +560,8 @@ textarea.form-control {
 
 /* content style */
 .content {
-  * {
-    margin-bottom: 20px;
+  ul {
+     margin-bottom: 20px;
   }
 
   .btn-main {
@@ -581,7 +581,8 @@ textarea.form-control {
   }
 
   ol,ul {
-    padding-left: 10px;
+    padding-left: 20px;
+    font-size:18px;
   }
 
   table {
