@@ -10,18 +10,28 @@
         <div class="content">
           {{.Content}}
           
-          <h1 class="font-weight-bold">Datasheets</h1>
           {{- with $data.downloads }}
+            <h1 class="">Datasheets</h1>
+            {{ range .datasheets }}
+              <p class="datasheet" style="margin-bottom:4em;">
+                <a href="{{ .url | absURL }}" style="margin-right: 1em;">
+                  <img src="{{ .image | absURL }}" class="datasheet-icon"/></a>
+                <a href="{{ .url | absURL }}" style="font-size:120%; text-decoration: none;">
+                {{ .title }} Datasheet
+                </a> 
+              </p>
+            {{ end }}
 
-          {{ range .datasheets }}
-            <p class="datasheet">
-              <a href="{{ .url | absURL }}">
-                <img src="{{ .image | absURL }}" class="datasheet-icon"/></a>
-              <a href="{{ .url | absURL }}">
-              {{ .title }}
-              </a> 
-            </p>
-          {{ end }}
+            <h1 class="">Firmware</h1>
+            {{ range .firmware }}
+              <p class="firmware" style="margin-bottom:4em;">
+                <a href="{{ .url | absURL }}" style="margin-right: 1em;">
+                  <img src="{{ .image | absURL }}" width="64px" class="datasheet-icon"/></a>
+                <a href="{{ .url | absURL }}" style="font-size:120%; text-decoration: none;">
+                Pinbreaker firwmare v{{ .version }}
+                </a> 
+              </p>
+            {{ end }}
 
           {{ end }}
         </div>
