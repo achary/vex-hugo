@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+{{ $data := index .Site.Data .Site.Language.Lang }}
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center mb-5">
+      </div>
+      <div class="col-lg-10 mb-5">
+        <div class="content">
+          {{.Content}}
+          
+          <h1 class="font-weight-bold">Datasheets</h1>
+          {{- with $data.downloads }}
+
+          {{ range .datasheets }}
+            <p class="datasheet">
+              <a href="{{ .url | absURL }}">
+                <img src="{{ .image | absURL }}" class="datasheet-icon"/></a>
+              <a href="{{ .url | absURL }}">
+              {{ .title }}
+              </a> 
+            </p>
+          {{ end }}
+
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
