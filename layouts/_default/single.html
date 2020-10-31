@@ -3,6 +3,7 @@
 <section class="section">
   <div class="container">
     <div class="row">
+      {{ if .Params.image }}
       <div class="col-md-5 mb-4 mb-md-0">
         <div class="sticky-image">
           <img class="img-fluid w-100" src="{{ .Params.Image | absURL }}" alt="{{ .Title }}">
@@ -12,8 +13,20 @@
         <h1 class="mb-4">{{.Title | markdownify}}</h1>
         <div class="content">
           {{.Content}}
+          {{ if .Params.vimeo }}
+          {{ partial "vimeo-video" . }}
+          {{ end }}
         </div>
       </div>
+      {{ else }}
+      <h1 class="mb-4">{{.Title | markdownify}}</h1>
+      <div class="content">
+        {{.Content}}
+        {{ if .Params.vimeo }}
+        {{ partial "vimeo-video" . }}
+        {{ end }}
+      </div>
+      {{ end }}
     </div>
   </div>
 </section>
