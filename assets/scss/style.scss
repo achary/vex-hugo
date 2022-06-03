@@ -200,6 +200,7 @@ a:active {
 
 .btn {
   border-radius: 0;
+  text-decoration: none !important;
 }
 
 .btn-main {
@@ -631,5 +632,13 @@ textarea.form-control {
   pre {
     padding: 10px 20px;
     background: #dadada;
+  }
+}
+
+.link-title{
+  color: inherit;
+  text-decoration: none !important;
+  &:hover{
+    color: $primary-color;
   }
 }

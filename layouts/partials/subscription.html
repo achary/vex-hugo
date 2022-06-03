@@ -10,18 +10,22 @@
         <h2 class="subheading text-white">{{ .title | markdownify }}</h2>
         <p class="text-white">{{ .content | markdownify }}</p>
         <div class="input-group">
-          <form action="{{ site.Params.subscription.mailchimp_form_action }}" method="post"
-            id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="w-100 validate" target="_blank"
-            novalidate>
-            <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL"
-              placeholder="{{ .placeholder }}">
+
+          <form action="{{ site.Params.subscription.mailchimp_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="w-100 validate" target="_blank" novalidate>
+            <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="{{ .placeholder }}">
             <div id="mce-responses" class="clear text-white mx-auto" style="margin-top: 2em;">
               <p class="response" id="mce-error-response" style="display:none"></p>
               <p class="response" id="mce-success-response" style="display:none"></p>
             </div> <button class="btn btn-main btn-submit" type="submit" name="subscribe">{{i18n "subscribe"}}</button>
-            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-              <input type="text" name="{{ site.Params.subscription.mailchimp_form_name }}" tabindex="-1">
-            </div>
+
+          <!-- <form action="{{ site.Params.subscription.mailchimp_form_action }}" method="post" class="w-100" name="mc-embedded-subscribe-form" target="_blank"> -->
+          <!--   <input type="email" id="email" class="form-control" name="email" placeholder="{{ .placeholder }}" -->
+          <!--     required> -->
+          <!--   <button class="btn btn-main btn-submit" type="submit" name="subscribe">{{i18n "subscribe"}}</button> -->
+          <!--   <div style="position: absolute; left: -5000px;" aria-hidden="true"> -->
+          <!--     <input type="text" name="{{ site.Params.subscription.mailchimp_form_name }}" tabindex="-1"> -->
+          <!--   </div> -->
+
           </form>
         </div><!-- /input-group -->
         <!-- Begin Mailchimp Signup Form -->

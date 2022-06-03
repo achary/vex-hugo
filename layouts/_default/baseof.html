@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-    {{- partial "head.html" . -}}
-    <body id="body">
-        {{- partial "preloader.html" . -}}
-        {{- partial "header.html" . -}}
-        {{- block "main" . }}{{- end }}
-        {{- partial "footer.html" . -}}
+{{- partial "head.html" . -}}
 
-        {{ partial "cookie-notice.html" }}
-    </body>
+<body id="body">
+	{{- partial "preloader.html" . -}}
+	{{- partial "header.html" . -}}
+	{{- block "main" . }}{{- end }}
+	{{- partial "footer.html" . -}}
+    {{ partial "cookie-notice.html" }}
+</body>
+
 </html>
