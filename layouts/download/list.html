@@ -15,7 +15,7 @@
             {{ range .datasheets }}
               <p class="datasheet" style="margin-bottom:4em;">
                 <a href="{{ .url | absURL }}" style="margin-right: 1em;">
-                  <img src="{{ .image | absURL }}" class="datasheet-icon"/></a>
+                  <img src="{{ .image | absURL }}" width="64px" class="datasheet-icon"/></a>
                 <a href="{{ .url | absURL }}" style="font-size:120%; text-decoration: none;">
                 {{ .title }} Datasheet
                 </a> 
@@ -28,7 +28,7 @@
               {{ range .kernel_modules }}
               <p >
                 <a href="{{ .url | absURL }}" style="margin-right: 1em;">
-                  <img src="{{ .image | absURL }}" width="64px" class="datasheet-icon"/></a>
+                  <img src="{{ .image | absURL }}" width="64px" class="kernel-module-icon"/></a>
                   <a href="{{ .url | absURL }}" style="font-size:120%; text-decoration: none;">
                     Pinbreaker firwmare v{{ .version }}
                   </a> 
