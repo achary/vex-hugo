@@ -14,7 +14,10 @@
         <div class="content">
           {{.Content}}
           {{ if .Params.vimeo }}
-          {{ partial "vimeo-video" . }}
+              {{ partial "vimeo-video" . }}
+          {{ end }}
+          {{ if .Params.video }}
+             {{ partial "local-video" . }}
           {{ end }}
         </div>
       </div>
@@ -28,7 +31,10 @@
       {{ end }}
         {{.Content}}
         {{ if .Params.vimeo }}
-        {{ partial "vimeo-video" . }}
+            {{ partial "vimeo-video" . }}
+        {{ end }}
+        {{ if .Params.video }}
+           {{ partial "local-video" . }}
         {{ end }}
       </div>
       {{ end }}
