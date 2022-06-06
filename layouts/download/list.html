@@ -33,22 +33,24 @@
                     Pinbreaker firwmare v{{ .version }}
                   </a> 
                 </p>
+                <p>See previous versions</p>
                 {{ end }}
-                <p>You may want to check this Linux Kernel compatibility matrix.</p>
               </div>
 
             <h1 class="">Firmware</h1>
             {{ range .firmware }}
-              <p class="firmware" style="margin-bottom:4em;">
+              <p class="firmware" >
                 <a href="{{ .url | absURL }}" style="margin-right: 1em;">
                   <img src="{{ .image | absURL }}" width="64px" class="datasheet-icon"/></a>
                 <a href="{{ .url | absURL }}" style="font-size:120%; text-decoration: none;">
                 Pinbreaker firwmare v{{ .version }}
                 </a> 
               </p>
+              <p>See previous versions</p>
             {{ end }}
 
           {{ end }}
+            <p style="margin-top:4em;">You may want to check this compatibility matrix.</p>
         </div>
       </div>
     </div>
