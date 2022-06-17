@@ -14,9 +14,9 @@
             <h1 class="">Datasheets</h1>
             {{ range .datasheets }}
               <p class="datasheet" style="margin-bottom:4em;">
-                <a href="{{ .url | absURL }}" style="margin-right: 1em;">
+                <a href="{{ .url | absURL }}" download style="margin-right: 1em;">
                   <img src="{{ .image | absURL }}" width="64px" class="datasheet-icon"/></a>
-                <a href="{{ .url | absURL }}" style="font-size:120%; text-decoration: none;">
+                <a href="{{ .url | absURL }}" download style="font-size:120%; text-decoration: none;">
                 {{ .title }} Datasheet
                 </a> 
               </p>
@@ -27,9 +27,9 @@
               <h1 class="">Kernel Modules</h1>
               {{ range .kernel_modules }}
               <p >
-                <a href="{{ .url | absURL }}" style="margin-right: 1em;">
+                <a href="{{ .url | absURL }}" download style="margin-right: 1em;">
                   <img src="{{ .image | absURL }}" width="64px" class="kernel-module-icon"/></a>
-                  <a href="{{ .url | absURL }}" style="font-size:120%; text-decoration: none;">
+                  <a href="{{ .url | absURL }}" download style="font-size:120%; text-decoration: none;">
                     Pinbreaker firwmare v{{ .version }}
                   </a> 
                 </p>
@@ -40,9 +40,9 @@
             <h1 class="">Firmware</h1>
             {{ range .firmware }}
               <p class="firmware" >
-                <a href="{{ .url | absURL }}" style="margin-right: 1em;">
+                <a href="{{ .url | absURL }}" download style="margin-right: 1em;">
                   <img src="{{ .image | absURL }}" width="64px" class="datasheet-icon"/></a>
-                <a href="{{ .url | absURL }}" style="font-size:120%; text-decoration: none;">
+                <a href="{{ .url | absURL }}" download style="font-size:120%; text-decoration: none;">
                 Pinbreaker firwmare v{{ .version }}
                 </a> 
               </p>
