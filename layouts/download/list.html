@@ -11,46 +11,29 @@
           {{.Content}}
           
           {{- with $data.downloads }}
-            <h1 class="">Datasheets</h1>
-            {{ range .datasheets }}
-              <p class="datasheet" style="margin-bottom:4em;">
-                <a href="{{ .url | absURL }}" download style="margin-right: 1em;">
-                  <img src="{{ .image | absURL }}" width="64px" class="datasheet-icon"/></a>
-                <a href="{{ .url | absURL }}" download style="font-size:120%; text-decoration: none;">
-                {{ .title }} Datasheet
-                </a> 
-              </p>
-            {{ end }}
+            {{ range .downloads }}
+                <h1 class="download-header-title" style="padding-left:64px; background-repeat:no-repeat;background-size:48px;background-image:url('{{ .image | absURL }}'); margin-bottom:0.5em;">{{.title}}</h1>
+                <ul class="datasheet" style="margin-bottom:1em;">
+                  {{ range .items }}
+                  <li>
+                        <a href="{{ .url | absURL }}" download style="font-size:140%; text-decoration: none;">
+                        {{ .title }}
+                        </a> 
+                    </li>
+                  {{ end }}
+                </ul>
 
-            <div class="kernel-module" style="margin-bottom:4em;">
-              
-              <h1 class="">Kernel Modules</h1>
-              {{ range .kernel_modules }}
-              <p >
-                <a href="{{ .url | absURL }}" download style="margin-right: 1em;">
-                  <img src="{{ .image | absURL }}" width="64px" class="kernel-module-icon"/></a>
-                  <a href="{{ .url | absURL }}" download style="font-size:120%; text-decoration: none;">
-                    Pinbreaker firwmare v{{ .version }}
-                  </a> 
+              {{ if .extralink }}
+                <p style="margin-top:0m; margin-bottom:3em;"> 
+                    <a href="{{ .extralink.url | absURL }}" download style="font-size:100%; text-decoration: none; ">
+                    {{ .extralink.text }}
+                    </a> 
                 </p>
-                <p>See previous versions</p>
-                {{ end }}
-              </div>
+              {{ end }}
 
-            <h1 class="">Firmware</h1>
-            {{ range .firmware }}
-              <p class="firmware" >
-                <a href="{{ .url | absURL }}" download style="margin-right: 1em;">
-                  <img src="{{ .image | absURL }}" width="64px" class="datasheet-icon"/></a>
-                <a href="{{ .url | absURL }}" download style="font-size:120%; text-decoration: none;">
-                Pinbreaker firwmare v{{ .version }}
-                </a> 
-              </p>
-              <p>See previous versions</p>
+              <p style="margin-top:2em;">&nbsp;</p>
             {{ end }}
-
           {{ end }}
-            <p style="margin-top:4em;">You may want to check this compatibility matrix.</p>
         </div>
       </div>
     </div>
